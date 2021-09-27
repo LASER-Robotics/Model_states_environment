@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>model_states_environment</name>
+  <version>0.6.13</version>
+  <description>The Model states environment</description>
+
+  <maintainer email="jorge.luiz.henri@hotmail.com">Jorge Luiz Henriques de Araujo Junior</maintainer>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>gazebo_ros</depend>
+
+
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"
+                gazebo_model_path="${prefix}/models"/>
+  </export>
+</package>
