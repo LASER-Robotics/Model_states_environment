@@ -31,3 +31,15 @@ windows:
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
+  - image_proc:
+      layout: tiled
+      panes:
+        - waitForSimulation; ROS_NAMESPACE=/$UAV_NAME/$CAMERA_NAME rosrun image_proc image_proc
+  - apriltag_ros:
+      layout: tiled
+      panes:
+        - waitForSimulation; ROS_NAMESPACE=/$UAV_NAME/$CAMERA_NAME roslaunch apriltag_ros continuous_detection.launch camera_name:=/$UAV_NAME/$CAMERA_NAME
+  - base_detect:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch laser_vision base_detect.launch
