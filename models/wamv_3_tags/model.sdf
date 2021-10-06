@@ -17,7 +17,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://wamv_3_tags/meshes/WAM-V-Base.dae</uri>
+            <uri>model://wamv_3_tags/meshes/wam-v-base_3tags_visual.obj</uri>
             <scale>1.0 1.0 1.0</scale>
           </mesh>
         </geometry>
@@ -30,7 +30,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://wamv_3_tags/meshes/WAM-V-Base.dae</uri>
+            <uri>model://wamv_3_tags/meshes/wam-v-base_3tags.stl</uri>
             <scale>1.0 1.0 1.0</scale>
           </mesh>
         </geometry>
