@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='wamv'>
+  <model name='wamv_3_tags'>
     <link name="base_link">
       <inertial>
         <mass>180</mass>
@@ -17,7 +17,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://wamv/meshes/WAM-V-Base.dae</uri>
+            <uri>model://wamv_3_tags/meshes/WAM-V-Base.dae</uri>
             <scale>1.0 1.0 1.0</scale>
           </mesh>
         </geometry>
@@ -30,7 +30,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://wamv/meshes/WAM-V-Base.dae</uri>
+            <uri>model://wamv_3_tags/meshes/WAM-V-Base.dae</uri>
             <scale>1.0 1.0 1.0</scale>
           </mesh>
         </geometry>

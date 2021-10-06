@@ -150,7 +150,7 @@
     <!--}-->
 
     <include>
-      <uri>model://wamv</uri>
+      <uri>model://wamv_3_tags</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
