@@ -13,14 +13,14 @@
   <library_effects>
     <effect id="Paint_-_Enamel_Glossy__White_-effect">
       <profile_COMMON>
-        <newparam sid="tag41_12_1_2_3-01_jpg-surface">
+        <newparam sid="tag41-surface">
           <surface type="2D">
-            <init_from>tag41_12_1_2_3-01_jpg</init_from>
+            <init_from>tag41</init_from>
           </surface>
         </newparam>
-        <newparam sid="tag41_12_1_2_3-01_jpg-sampler">
+        <newparam sid="tag41-sampler">
           <sampler2D>
-            <source>tag41_12_1_2_3-01_jpg-surface</source>
+            <source>tag41-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -29,7 +29,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="tag41_12_1_2_3-01_jpg-sampler" texcoord="land_base_plate_1_Body1_009-mesh-map-0"/>
+              <texture texture="tag41-sampler" texcoord="land_base_plate_1_Body1_009-mesh-map-0"/>
             </diffuse>
             <reflectivity>
               <float sid="specular">0.709302</float>
@@ -60,8 +60,8 @@
     </effect>
   </library_effects>
   <library_images>
-    <image id="tag41_12_1_2_3-01_jpg" name="tag41_12_1_2_3-01_jpg">
-      <init_from>tag41_12_1_2_3-01.jpg</init_from>
+    <image id="tag41" name="tag41">
+      <init_from>tag41.jpg</init_from>
     </image>
   </library_images>
   <library_materials>
