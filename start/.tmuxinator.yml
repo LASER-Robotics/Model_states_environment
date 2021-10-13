@@ -1,7 +1,7 @@
 name: simulation
 root: ./
 startup_window: status
-pre_window: export CAMERA_NAME=rs_d435/color; export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation; export SENSORS="garmin_down"
+pre_window: export CAMERA_NAME=rs_d435/color; export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_FILE=./world.yaml; export WORLD_NAME=simulation; export SENSORS="garmin_down"
 windows:
   - roscore:
       layout: tiled
@@ -22,7 +22,7 @@ windows:
   - control:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch mrs_uav_general core.launch
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_odometry:=./custom_configs/odometry.yaml
   - takeoff:
       layout: tiled
       panes:

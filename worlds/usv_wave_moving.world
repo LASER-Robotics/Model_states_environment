@@ -151,7 +151,7 @@
 
     <include>
       <uri>model://wamv</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>3 3 0 0 0 0</pose>
     </include>
 
   </world>
