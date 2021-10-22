@@ -153,6 +153,10 @@
       <uri>model://wamv</uri>
       <pose>3 3 0 0 0 0</pose>
     </include>
+    <include>
+      <uri>model://sphere</uri>
+      <pose>3 3 0 0 0 0</pose>
+    </include>
 
   </world>
 </sdf>
