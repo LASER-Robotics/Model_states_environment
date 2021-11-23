@@ -39,7 +39,7 @@ windows:
       layout: tiled
       panes:
         - waitForSimulation; ROS_NAMESPACE=/$UAV_NAME/$CAMERA_NAME roslaunch apriltag_ros continuous_detection.launch camera_name:=/$UAV_NAME/$CAMERA_NAME config_tags:=./apriltag/tags.yaml config_settings:=./apriltag/settings.yaml
-  - base_detect:
-      layout: tiled
-      panes:
-        - waitForSimulation; roslaunch laser_vision base_detect.launch
+  # - base_detect:
+  #     layout: tiled
+  #     panes:
+  #       - waitForSimulation; roslaunch laser_vision base_detect.launch
