@@ -1,0 +1,21 @@
+<launch>
+
+    <arg name="robot_name" default="wamv1" />
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.02"/>
+
+    <param name="robot_description"
+    command="$(find xacro)/xacro $(find model_states_environment)/urdf/robot.urdf.xacro" />
+
+    <group ns="$(arg robot_name)">
+        <param name="tf_prefix" value="$(arg robot_name)_tf" />
+        <include file="$(find model_states_environment)/launch/spawn.launch" >
+            <arg name="x_out" value="$(arg x)"/>
+            <arg name="y_out" value="$(arg y)"/>
+            <arg name="z_out" value="$(arg z)"/>
+            <arg name="robot" default="$(arg robot_name)"/>
+        </include>
+    </group>
+
+</launch>
