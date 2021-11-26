@@ -19,6 +19,7 @@ windows:
       layout: tiled
       panes:
         - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/uav1_pos.yaml --enable-rplidar --enable_realsense_down"
+        - waitForSimulation; roslaunch model_states_environment wamv_spawn.launch x:=3 y:=3 z:=0 robot_name:=wamv1
   - control:
       layout: tiled
       panes:

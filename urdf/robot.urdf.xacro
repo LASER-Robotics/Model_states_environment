@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<robot name="wamv_with_imu" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find model_states_environment)/urdf/robot.gazebo.xacro" />
+
+  <gazebo reference="carcaca">
+    <selfCollide>true</selfCollide>
+    <mu1 value="100"/>
+    <mu2 value="100"/>
+    <fdir1 value="0 0 0"/>
+  </gazebo>
+
+  <link name="carcaca">
+    <inertial>
+      <mass value="180"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="120" ixy="0" ixz="0" iyy="393" iyz="0" izz="446"/>
+    </inertial>
+    <collision name="carcaca_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://model_states_environment/models/wamv/meshes/WAM-V-Base.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="carcaca_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://model_states_environment/models/wamv/meshes/WAM-V-Base.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+</robot>

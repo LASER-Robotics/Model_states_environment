@@ -1,0 +1,12 @@
+<launch>
+    <arg name="x_out"/>
+    <arg name="y_out"/>
+    <arg name="z_out"/>
+    <arg name="robot"/>
+    <arg name="init_pose" value="-x $(arg x_out) -y $(arg y_out) -z $(arg z_out)"/>
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+    args="$(arg init_pose) -urdf -param /robot_description -model $(arg robot)"
+    respawn="false" output="screen" />
+
+</launch>
