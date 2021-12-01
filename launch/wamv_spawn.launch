@@ -1,6 +1,6 @@
 <launch>
 
-    <arg name="robot_name" default="wamv1" />
+    <arg name="robot_name" default="wamv" />
     <arg name="x" default="0"/>
     <arg name="y" default="0"/>
     <arg name="z" default="0.02"/>
