@@ -23,7 +23,7 @@ windows:
   - control:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_odometry:=./custom_configs/odometry.yaml
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_odometry:=./custom_configs/odometry.yaml config_uav_manager:=./custom_configs/uav_manager.yaml
   - takeoff:
       layout: tiled
       panes:
