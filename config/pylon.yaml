@@ -70,7 +70,11 @@ grab_strategy : 1
 ##########################################################################
 
 #  The exposure time in microseconds to be set after opening the camera.
+<<<<<<< HEAD
 exposure: 25.0
+=======
+exposure: 10000.0
+>>>>>>> 38ce9728c8770c88ce0ae4cb819767a3f8196ea8
 
 #  The target gain in percent of the maximal value the camera supports
 #  For USB-Cameras, the gain is in dB, for GigE-Cameras it is given in so
