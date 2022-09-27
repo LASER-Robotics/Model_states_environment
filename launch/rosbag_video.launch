@@ -1,0 +1,14 @@
+<launch>
+  <arg name="camera_topic" default="/uav42/tag_detections_image"/>
+  <arg name="bag_file" default="/home/pmg/Documents/Temesvar_camp_2022/04-05-22_final_experiment/bluedrone2_/paper_final_18_2022_05_04_11_53_33/_2022-05-04-11-54-45.bag"/>
+  <arg name="image_location" default="/home/pmg/Documents/Temesvar_camp_2022/04-05-22_final_experiment/extracted_bag_video/paper_18/extracted_images/frame%06i.png"/>
+  <arg name="image_type" default="compressed"/>
+
+  <node pkg="rosbag" type="play" name="rosbag" args="-r 0.2 $(arg bag_file)"/>
+  <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen">
+    <remap from="image" to="$(arg camera_topic)"/>
+    <param name="filename_format" value="$(arg image_location)"/>
+    <param name="image_transport" value="$(arg image_type)"/>
+  </node>
+</launch>
+
