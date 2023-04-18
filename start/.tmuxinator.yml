@@ -19,6 +19,7 @@ windows:
       layout: tiled
       panes:
         - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/uav1_pos.yaml --enable_realsense_down"
+        - waitForSimulation; roslaunch model_states_environment wamv_spawn.launch x:=3 y:=3 z:=0 robot_name:=wamv
   - control:
       layout: tiled
       panes:
@@ -31,7 +32,19 @@ windows:
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
+  - image_proc:
+      layout: tiled
+      panes:
+        - waitForSimulation; ROS_NAMESPACE=/$UAV_NAME/$CAMERA_NAME rosrun image_proc image_proc
+  - apriltag_ros:
+      layout: tiled
+      panes:
+        - waitForSimulation; ROS_NAMESPACE=/$UAV_NAME roslaunch apriltag_ros continuous_detection.launch camera_name:=/$UAV_NAME/$CAMERA_NAME config_tags:=./apriltag/tags.yaml config_settings:=./apriltag/settings.yaml
   - lmpc_solver:
       layout: tiled
       panes:
-        - waitForSimulation; roslaunch lmpc_solver gazebo.launch LMPC_BRIDGE:=False CHIRP_GENERATOR:=True BAG_NAME:=flight_test
+        - waitForSimulation; roslaunch lmpc_solver gazebo.launch
+  - usv_estiplan:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch usv_estiplan gazebo_wave.launch

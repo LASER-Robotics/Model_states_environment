@@ -34,4 +34,5 @@ windows:
   - lmpc_solver:
       layout: tiled
       panes:
-        - waitForSimulation; roslaunch lmpc_solver gazebo.launch LMPC_BRIDGE:=False CHIRP_GENERATOR:=True BAG_NAME:=flight_test
+        - waitForSimulation; roslaunch linear_mpc nodelet.launch LMPC_BRIDGE:=False CHIRP_GENERATOR:=True BAG_NAME:=flight_test
+

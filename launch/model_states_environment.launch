@@ -43,8 +43,9 @@
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen" />
   </group>
 
-  <node name="image view" pkg="rqt_image_view" type="rqt_image_view" output="screen">
+  <node name="image_view" pkg="rqt_image_view" type="rqt_image_view" output="screen">
   <remap from="image" to="/uav1/rs_d435/color/tag_detections_image/compressed" />
   </node>
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find linear_mpc)/config/lmpc.rviz" />
 
 </launch>
