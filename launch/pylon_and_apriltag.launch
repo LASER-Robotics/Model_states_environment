@@ -14,8 +14,8 @@
   <!-- configure camera input -->
   <arg name="image_topic" default="image_rect" />
   <arg name="queue_size" default="1" />
-  <arg name="config_settings" default="$(find apriltag_ros)/config/settings.yaml" />
-  <arg name="config_tags" default="$(find apriltag_ros)/config/tags.yaml" />
+  <arg name="config_settings" default="$(find model_states_environment)/config/apriltag/settings.yaml" />
+  <arg name="config_tags" default="$(find model_states_environment)/config/apriltag/tags.yaml" />
   <arg name="n_threads" default="8" />
 
 
@@ -23,11 +23,11 @@
 
       <arg name="debug" default="false" />
       <arg name="mtu_size" default="1500" />
-      <arg name="startup_user_set" default="CurrentSetting" />
+      <arg name="startup_user_set" default="UserSet1"/>
       <arg name="enable_status_publisher" default="true" />
       <arg name="enable_current_params_publisher" default="false" />
 
-      <arg name="config_file" default="$(find pylon_camera)/config/uav.yaml" />
+      <arg name="config_file" default="$(find model_states_environment)/config/pylon.yaml" />
       <arg name="camera_info_url" default="file://$(find model_states_environment)/config/$(arg CAMERA_NAME).yaml" />
 
       <arg unless="$(arg debug)" name="launch_prefix" value="" />
