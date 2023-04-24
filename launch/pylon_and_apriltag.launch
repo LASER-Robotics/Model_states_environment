@@ -6,9 +6,10 @@
   <arg name="respawn" default="true" />
   <arg name="fcu_frame" default="$(arg UAV_NAME)/fcu" />
   <arg name="CAMERA_NAME" default="basler_$(env BASLER)" />
-  <arg name="CAMERA_FRAME" default="$(arg UAV_NAME)/$(arg CAMERA_NAME)" />
+  <arg name="CAMERA_TYPE" default="basler" />
+  <arg name="CAMERA_FRAME" default="$(arg UAV_NAME)/$(arg CAMERA_TYPE)" />
   <arg name="fcu_frame_slashless" default="fcu_$(arg UAV_NAME)" />
-  <arg name="node_name" default="$(arg CAMERA_NAME)" />
+  <arg name="node_name" default="$(arg CAMERA_TYPE)" />
   <arg name="namespace" default="$(arg UAV_NAME)"/>
   <arg name="apriltag_namespace" default="apriltag_ros_continuous_node" />
   <!-- configure camera input -->
@@ -44,9 +45,9 @@
       <!-- arg unless="$(arg standalone)" name="nodelet_load" value="load $(arg nodelet) $(arg manager)"/-->
       <!-- arg     if="$(arg standalone)" name="nodelet_load" value="standalone $(arg nodelet)"/-->
 
-      <node pkg="nodelet" type="nodelet" name="$(arg CAMERA_NAME)" args="load $(arg pylon_nodelet) vision_nodelet_manager" output="screen" launch-prefix="$(arg launch_prefix)" respawn="$(arg respawn)" >
+      <node pkg="nodelet" type="nodelet" name="$(arg CAMERA_TYPE)" args="load $(arg pylon_nodelet) vision_nodelet_manager" output="screen" launch-prefix="$(arg launch_prefix)" respawn="$(arg respawn)" >
         <rosparam command="load" file="$(arg config_file)" />
-        <param name="camera_frame" value="$(arg UAV_NAME)/$(arg CAMERA_NAME)_optical"/>
+        <param name="camera_frame" value="$(arg UAV_NAME)/$(arg CAMERA_TYPE)"/>
         <param name="camera_info_url" value="$(arg camera_info_url)"/>
         <param name="gige/mtu_size" value="$(arg mtu_size)"/>
         <param name="startup_user_set" value="$(arg startup_user_set)"/>
@@ -59,8 +60,8 @@
         <!-- Remap topics from those used in code to those on the ROS network -->
         <rosparam command="load" file="$(arg config_settings)"/>
         <rosparam command="load" file="$(arg config_tags)"/>
-        <remap from="image_rect" to="$(arg CAMERA_NAME)/$(arg image_topic)" />
-        <remap from="camera_info" to="$(arg CAMERA_NAME)/camera_info" />
+        <remap from="image_rect" to="$(arg CAMERA_TYPE)/$(arg image_topic)" />
+        <remap from="camera_info" to="$(arg CAMERA_TYPE)/camera_info" />
 
         <param name="publish_tag_detections_image" type="bool" value="true" /><!-- default: false -->
         <param name="queue_size" type="int" value="$(arg queue_size)" />
